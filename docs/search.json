@@ -1,0 +1,299 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "",
+    "text": "Preface: The Guidance System\nTo be honest, I spent about ten years learning statistics the wrong way. As a social scientist with a background in Economics, I was trained to be a “consumer” of methods. I knew how to run the software and interpret the output, but I had a hard time grasping the intuition behind the machine. I often felt that my understanding had cracks in it—gaps where the logic should have been solid. For years, I struggled with the fundamental questions that define the “Producer” of research: Why are sample statistics so different from population parameters? Why do we carefully select an assumed distribution instead of just using the raw data? What is the actual difference between parametric and non-parametric approaches?\nLike many social scientists, I had been consuming only the “surface” of statistics—the simple examples and the black-box tools—without ever seeing what lay beneath. I knew this feeling well because I had faced it before in my own field. During my undergraduate and Master’s studies in Economics, I was overwhelmed by the complex definitions, theorems, and math required to be an advanced user. But during the first two years of my Ph.D., I managed to break through that complex system. I forced myself to stop memorizing and start creating storylines that connected those isolated theorems into coherent narratives.\nIt felt like I had transferred my brain through a hidden gateway—like the platform in Harry Potter—and gradually, the chaos has turned into a system. Now, I want to use that same discipline to bridge the “holes and cracks” in my understanding of statistics. This book is a documentation of that journey. It is written for social scientists, or anyone unfamiliar with complex math, who want to look into the “beautiful mind of nerds” without getting lost in the equations. My goal is to use storylines and narratives to strip away the intimidating surface and look into the logic underneath.\nWe are going to treat statistics not as a set of rules, but as a series of solutions to specific problems.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-roadmap",
+    "href": "index.html#the-roadmap",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "The Roadmap",
+    "text": "The Roadmap",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-binary-choice-from-dust-to-distributions",
+    "href": "index.html#the-binary-choice-from-dust-to-distributions",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "1. The Binary Choice: From Dust to Distributions",
+    "text": "1. The Binary Choice: From Dust to Distributions\nThe Narrative: We begin with the most primitive unit of information: the binary choice (Life vs. Death). We trace how repeating this jagged choice millions of times smooths it out into the “Classical Family” of distributions.\n\nModels:\n\nBernoulli & Binomial: The origin (discrete trials).\nNormal (Gaussian): The destination (continuous limit).\nPoisson: The limit of rare events.\nExponential & Gamma: The modeling of waiting times.\n\nTheory:\n\nCentral Limit Theorem (CLT): Why sums tend toward Normality.\nMaximum Entropy: Why the Normal is the “most honest” assumption for a fixed variance.\nLaw of Rare Events: The bridge from Binomial to Poisson.\n\nFunctions (The Math):\n\nPDFs/PMFs: The density formulas.\nMoment Generating Functions (MGF): \\(M(t) = E[e^{tX}]\\) (The genetic code of distributions).\nTaylor Series Expansion: Used to prove how higher moments vanish in the limit.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-detective-likelihood-estimation",
+    "href": "index.html#the-detective-likelihood-estimation",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "2. The Detective: Likelihood & Estimation",
+    "text": "2. The Detective: Likelihood & Estimation\nThe Narrative: We stop playing God (knowing parameters) and start playing Detective (guessing them from data). We discover that “Least Squares” is just a special case of Likelihood.\n\nModels:\n\nStandard Normal Model: Estimating \\(\\mu\\) and \\(\\sigma\\).\nLinear Regression (OLS): Re-introduced as a Maximum Likelihood estimator.\n\nTheory:\n\nThe Likelihood Principle: All evidence is contained in the likelihood function.\nMaximum Likelihood Estimation (MLE): Finding parameters that maximize the probability of the observed data.\n\nFunctions (The Math):\n\nLikelihood Function: \\(L(\\theta | X) = \\prod f(x_i; \\theta)\\).\nLog-Likelihood: \\(\\ell(\\theta) = \\sum \\ln f(x_i; \\theta)\\) (The optimization surface).\nScore Function: The derivative of the Log-Likelihood.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-courtroom-hypothesis-testing",
+    "href": "index.html#the-courtroom-hypothesis-testing",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "3. The Courtroom: Hypothesis Testing",
+    "text": "3. The Courtroom: Hypothesis Testing\nThe Narrative: The Detective finds a suspect, but the Courtroom must check the evidence. We introduce the Skeptic (Null Hypothesis) and measure “Surprise” rather than “Truth.”\n\nModels:\n\nNull Model (\\(H_0\\)): The restricted model (e.g., \\(\\beta = 0\\)).\nAlternative Model (\\(H_1\\)): The full model.\n\nTheory:\n\nNull Hypothesis Significance Testing (NHST).\nType I & II Errors: False Positives vs. False Negatives.\nAsymptotic Normality: Why test statistics often follow a \\(\\chi^2\\) distribution.\n\nFunctions (The Math):\n\nWald Statistic: Horizontal distance from the null.\nLikelihood Ratio Statistic: Vertical distance (height difference) between models.\nScore Statistic: The slope of the likelihood at the null.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#bending-the-line-generalized-linear-models-glm",
+    "href": "index.html#bending-the-line-generalized-linear-models-glm",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "4. Bending the Line: Generalized Linear Models (GLM)",
+    "text": "4. Bending the Line: Generalized Linear Models (GLM)\nThe Narrative: Standard regression fails when the outcome is binary or a count (lines go to infinity). We use a “Link Function” to translate linear math into bounded probabilities.\n\nModels:\n\nLogistic Regression: For binary outcomes.\nPoisson Regression: For count data.\nGLM Framework: The unifying theory.\n\nTheory:\n\nThe Link Function: Separating the systematic component from the random component.\nOdds & Log-Odds: Interpreting probability on a linear scale.\n\nFunctions (The Math):\n\nSigmoid (Logit) Function: \\(p = 1 / (1 + e^{-z})\\).\nLog Link: \\(\\ln(\\lambda) = \\beta X\\).\nDeviance: The GLM version of “Residual Sum of Squares.”",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-penalty-regularization",
+    "href": "index.html#the-penalty-regularization",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "5. The Penalty: Regularization",
+    "text": "5. The Penalty: Regularization\nThe Narrative: The Detective gets overconfident and starts seeing conspiracies (Overfitting). We introduce a “Judge” who fines the model for using too many variables.\n\nModels:\n\nRidge Regression (\\(L_2\\)): Shrinks parameters.\nLasso Regression (\\(L_1\\)): Selects variables (forces some to zero).\nElastic Net: The hybrid approach.\n\nTheory:\n\nBias-Variance Trade-off: The fundamental conflict of learning.\nOverfitting: Memorizing noise vs. learning signal.\n\nFunctions (The Math):\n\nLagrange Multipliers: Solving constrained optimization.\nThe Penalty Term: Adding \\(+\\lambda \\sum \\beta^2\\) to the Loss Function.\nNorms: Euclidean (\\(L_2\\)) vs. Manhattan (\\(L_1\\)) distance.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-subjective-return-bayesian-inference",
+    "href": "index.html#the-subjective-return-bayesian-inference",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "6. The Subjective Return: Bayesian Inference",
+    "text": "6. The Subjective Return: Bayesian Inference\nThe Narrative: We realize the “Penalty” was actually a “Prior Belief.” We shift from seeking one True Parameter to mapping the entire distribution of uncertainty.\n\nModels:\n\nBayesian Linear Regression.\nHierarchical/Multilevel Models: Handling grouped data.\n\nTheory:\n\nBayes’ Theorem: Updating beliefs with data.\nPriors: Informative vs. Flat priors.\nConjugacy: Mathematical compatibility between Prior and Likelihood.\n\nFunctions (The Math):\n\nPosterior Formulation: \\(P(\\theta|X) \\propto P(X|\\theta) \\cdot P(\\theta)\\).\nMCMC (Markov Chain Monte Carlo): The simulation engine for complex posteriors.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-invisible-thread-time-series-spatial-analysis",
+    "href": "index.html#the-invisible-thread-time-series-spatial-analysis",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "7. The Invisible Thread: Time Series & Spatial Analysis",
+    "text": "7. The Invisible Thread: Time Series & Spatial Analysis\nThe Narrative: We stop assuming data points are independent islands. We acknowledge that today is haunted by yesterday (Time) and location shapes destiny (Space).\n\nModels:\n\nARIMA: Modeling memory in time.\nSAR / SEM: Spatial Autoregressive & Spatial Error models.\nGaussian Processes: The ultimate model of proximity.\n\nTheory:\n\nStationarity: The assumption that rules don’t change over time.\nAutocorrelation: Correlation of a variable with itself.\nSpatial Weights (\\(W\\)): Defining the neighborhood.\n\nFunctions (The Math):\n\nCovariance Matrix (\\(\\Sigma\\)): Moving from Diagonal (independent) to Dense (correlated).\nACF / PACF: Measuring the “echo” of the past.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-broken-mirror-trees-forests",
+    "href": "index.html#the-broken-mirror-trees-forests",
+    "title": "A Narrative of Statistics for the Social Scientist",
+    "section": "8. The Broken Mirror: Trees & Forests",
+    "text": "8. The Broken Mirror: Trees & Forests\nThe Narrative: When the world is too fractured for smooth curves, we break it into shards. We use Decision Trees to split logic and Ensembles (Forests) to stabilize the result.\n\nModels:\n\nCART (Decision Trees): The single shard.\nRandom Forest: The Wisdom of Crowds (Bagging).\nGradient Boosting (XGBoost): The Learning Student (Boosting).\n\nTheory:\n\nRecursive Partitioning: Splitting data into homogenous groups.\nEnsemble Learning: Reducing Variance (Bagging) vs. Reducing Bias (Boosting).\nGradient Descent in Function Space: Optimizing predictions step-by-step.\n\nFunctions (The Math):\n\nGini Impurity / Entropy: Metrics for “purity” in a split.\nInformation Gain: The reduction in entropy.",
+    "crumbs": [
+      "Preface",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html",
+    "href": "01.binary_choice_to_normal.html",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "",
+    "text": "The Binary Choice:  From Dust to Distributions\nOur early lives are surrounded by choices, yet we rarely make them alone. Before we become adults, our decisions of what to eat, what to learn, where to live are not truly critical. We are guided by guardians, parents, and teachers who act as our safety net. They make the “good choices” for us, and more importantly, they take responsibility for the outcomes. We stand in front of a transferring door—like the platform in Harry Potter—and we make that last selection with our guardians: to go to college, to leave home, to step into the new era. But once we cross that threshold, the safety net vanishes. To live as a grown-up is to make responsible decisions for oneself, and eventually for one’s family and neighbors.\nWe enter a world where legal guardians no longer exist to absorb the cost of our mistakes. In this “World of the Grown-Up,” the ability to make a strategic selection under uncertainty is not just a skill; it is survival. This is why we learn Statistics and Economics. They are not merely academic subjects for getting a job; they are the new guidance system for making good decisions even if they aren’t always the optimal ones in a life full of noise and risk. To understand the logic of this decision-making, we must understand the structure of how decision has been made which lay behind. To look into what is behind, now, I start this story with the very first choice in the history of the universe that had made.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html#the-bernoulli-trial",
+    "href": "01.binary_choice_to_normal.html#the-bernoulli-trial",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "The Bernoulli Trial",
+    "text": "The Bernoulli Trial\nImagine the universe at the very beginning. It is a blank canvas where anything is possible. But for life to actually start, that endless possibility has to narrow down to a single, sharp moment. Think about the first primitive cell. It doesn’t matter how it got there. The moment it exists, it faces the simplest question in the world: Will I survive, or not?\nThere is no “maybe.” There is no “halfway.” It is a simple switch. In statistics, we call this switch the Bernoulli Trial. It is the atom of probability. It takes the messy, infinite world and cuts it down to a simple “Yes” (1) or “No” (0). You are either fully alive, or you are not.”\n\n\n\n\n\n\nThe Bernoulli PMF\n\n\n\n\n\nThe probability mass function (PMF) for a single Bernoulli trial is the foundation of all discrete probability.\n\\[\nP(X=k) = p^k (1-p)^{1-k} \\quad \\text{for } k \\in \\{0,1\\}\n\\]\n\n\\(k\\): The outcome (1 for success, 0 for failure).\n\\(p\\): The probability of success.\n\nThe expectation (mean) is simply \\(E[X] = p\\), and the variance is \\(Var(X) = p(1-p)\\). This variance formula is crucial because it implies that uncertainty is highest when \\(p=0.5\\) (maximum confusion) and vanishes as \\(p\\) approaches 0 or 1 (certainty).",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html#the-binomial-distribution",
+    "href": "01.binary_choice_to_normal.html#the-binomial-distribution",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "The Binomial Distribution",
+    "text": "The Binomial Distribution\nTime passes, and the solitary struggle evolves into a collective crusade. The primitive organism does not just survive; it strives to persist beyond its own lifespan. It copies itself, splitting and sharing its genetic code in a desperate bid to cheat death. This is the first rule of evolution: transmission. But nature is a harsh filter, and not every copy survives the transfer. Some offspring carry the torch; others are extinguished by the cold indifference of the environment. Now, we are no longer watching a single creature flip a coin against fate. We are watching a generation. Imagine one hundred of these descendants, all carrying the same fragile hope, all facing the same binary test. The question shifts from the specific to the aggregate. We stop asking, “Did this one survive?” and start asking, “How many made it through?” This variation is vital. If fate were uniform—if every single offspring faced the exact same outcome—it would be a tragedy. If the coin landed on “Death” (0) for everyone at once, the lineage would vanish in a single generation. Even if everyone survived (1), life would lack the pressure to adapt.\nBut reality avoids these extremes because of a simple numerical truth: Being extreme is hard; being average is easy.\nTo get a result of zero survivors, every single coin flip has to land on “Death.” There is only one way for that to happen. Similarly, to get 100% survival, everyone has to land on “Life.” That is also extremely rare because everything has to go perfectly. But getting a result in the middle—say, 50 survivors—is easy. You could have the first 50 survive, or the last 50, or every other person. There are billions of different ways to get a mixed result. The “Average” isn’t a magical target. It is simply the destination with the most roads leading to it. Because there are so many more ways to end up in the middle, the results naturally cluster there. This clustering is what we call the Binomial Distribution.\n\n\n\n\n\n\nThe Core of the Cluster (nCk)\n\n\n\n\n\nThe Binomial distribution formula reveals exactly why this “Cluster” exists.\n\\[\nP(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}\n\\]\n\nThe Probabilities (\\(p^k...\\)): These terms handle the likelihood of specific events (heads vs. tails).\nThe Coefficient \\(\\binom{n}{k}\\): This is the “n choose k” term. It counts the combinations—the number of different storylines that lead to the same result.\n\nWhy the Bell Curve forms: * \\(\\binom{100}{0} = 1\\) (Only 1 way to have 0 survivors). * \\(\\binom{100}{50} \\approx 10^{29}\\) (There are \\(100,000,000,000,000,000,000,000,000,000\\) ways to have 50 survivors).\nThe coefficient \\(\\binom{n}{k}\\) is the weight of the crowd. It physically forces the probability mass to cluster in the center, creating the “Bell Shape” long before we even calculate a mean.\n\n\n\nThis logic works perfectly for a small group. But as the population grows from a few hundred to millions, we face a new problem: the blindness of scale. When we observe a small village of 100 people, we can perhaps track every story—who lived, who died, who succeeded. But in a modern society like the United States, with over 330 million souls, the sheer volume of data overwhelms us. The detailed biography of every single individual becomes useless noise; we cannot read 330 million binary codes.\nTo make sense of this massive crowd, the social scientist must abandon the individual biography and embrace the summary. We narrow our focus to the only two signals that remain visible from such a distance. We ask where the crowd is centered—the Mean—to understand if the group is generally surviving. Then, we look for the chaos within that group—the Variance—to determine if everyone shares a similar fate or if the outcomes are drifting wildly apart. Before we move to the next section, let us verify this visually. The figure below demonstrates how the combinatorial weight of the middle smooths out the jagged steps of the individual into a perfect curve.\n\n\n\n\n\n\n\n\nFigure 2.1: From Discrete Steps to a Smooth Curve: This plot shows the probability distribution for the number of heads in \\(n\\) coin flips (\\(p=0.5\\)). As \\(n\\) increases from 1 to 16, the discrete, blocky binomial distribution (grey bars) flattens and spreads out, perfectly matching the continuous Normal distribution (red line) imposed over the bottom plot.\n\n\n\n\n\n\nthe Factorial\nYou might be wondering: How exactly does a jagged pile of blocks turn into a smooth curve?The answer lies in the “Combinatorial Engine” we just used: the factorial (\\(n!\\)). If you try to calculate the number of combinations for a large tribe—say, \\(n=100\\) coin flips—the numbers become impossibly large. The number of permutations (\\(100!\\)) has 158 digits. It is a mathematical monster that creates a “Combinatorial Explosion.”In the 18th century, Abraham de Moivre faced this monster. He realized that calculating these exact odds for gamblers was impossible. But he discovered a secret hidden inside the growth of the factorial. He found that as \\(n\\) gets large, the factorial function (\\(n!\\)) stops behaving like a discrete multiplication problem and starts behaving like a continuous exponential function.This is famously known as Stirling’s Approximation (though De Moivre did the heavy lifting). He proved that:\\[n! \\approx \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n\\]. This formula is the “Bridge.” It transforms the jagged, discrete integer math of counting (\\(n!\\)) into the smooth, continuous geometry of circles (\\(\\pi\\)) and growth (\\(e\\)).When De Moivre plugged this approximation back into the Binomial formula, the massive factorials canceled each other out. The complex combinatorics melted away, leaving behind a single, elegant term that describes how the probability drops off as you move away from the center:\\[e^{-x^2}\\]This is the mathematical heartbeat of the Central Limit Theorem. It proves that if you have enough events, the “Combinatorial Explosion” of discrete choices inevitably smooths itself out into the exponential curve of the Normal Distribution.Now that we know why the pile becomes smooth, we are ready to name it.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html#the-normal-distribution",
+    "href": "01.binary_choice_to_normal.html#the-normal-distribution",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "The Normal Distribution",
+    "text": "The Normal Distribution\nWe have reduced the massive complexity of the world down to just two numbers: the Mean (the center) and the Variance (the spread). But as social scientists, we often need more than just a summary; we need to visualize the whole population. We need to draw the shape of the crowd. This leads to a difficult question: If you only know the center and the spread, what shape should you draw?\nYou could draw a flat rectangular box. You could draw a sharp triangle. All of these shapes could have the correct mean and variance. But if you draw a triangle, you are adding sharp corners that you have no evidence for. If you draw a box, you are assuming a hard cutoff that might not exist. You are effectively “lying” by adding details that aren’t in your data. To be honest researchers, we want the shape that fits our two numbers (Mean and Variance) but assumes absolutely nothing else. We want the shape that is as random and smooth as possible, maximizing our uncertainty about the details we don’t know. In physics and information theory, this is called the Principle of Maximum Entropy. It is the mathematical definition of honesty. It turns out, there is only one shape in the universe that satisfies this principle for a fixed mean and variance. That shape is the Normal Distribution (the Gaussian).\n\n\n\n\n\n\nThe Gaussian PDF\n\n\n\n\n\nThe Probability Density Function (PDF) of the Normal distribution is defined entirely by two parameters: the mean (\\(\\mu\\)) and the standard deviation (\\(\\sigma\\)).\n\\[\nf(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{ -\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2 }\n\\]\n\n\\(\\mu\\): The center of the pile (Mean).\n\\(\\sigma\\): The spread of the pile (Standard Deviation).\n\\(e^{-x^2}\\): The exponential decay that creates the famous bell slope.\n\\(\\frac{1}{\\sqrt{2\\pi}}\\): The normalization constant required to make the total area under the curve equal to 1.\n\n\n\nShow Code\nlibrary(ggplot2)\n\n# Define the range\nx_vals &lt;- seq(-4, 4, length.out = 1000)\n\n# Calculate the density for Standard Normal (mean=0, sd=1)\ny_vals &lt;- dnorm(x_vals, mean = 0, sd = 1)\ndf &lt;- data.frame(x = x_vals, y = y_vals)\n\n# Plot\nggplot(df, aes(x, y)) +\n  geom_line(color = \"darkblue\", linewidth = 1.2) +\n  geom_area(fill = \"lightblue\", alpha = 0.4) +\n  labs(title = \"The Standard Normal Distribution\",\n       subtitle = \"The shape of honesty (Mean = 0, SD = 1)\",\n       x = \"z-score\", y = \"Density\") +\n  theme_minimal()",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html#the-cousins-of-normal-distribution",
+    "href": "01.binary_choice_to_normal.html#the-cousins-of-normal-distribution",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "The Cousins of Normal distribution",
+    "text": "The Cousins of Normal distribution\nWe have spent this entire chapter building a shrine to the Normal Distribution. We called it “The Honest Shape” because it gives us freedom. It allows us to control the two most important levers of life separately: the Mean (Expected Reward) and the Variance (Risk). In a Normal world, you can have a rich country (High Mean) that is either equal (Low Variance) or unequal (High Variance). The two moments are free to move independently.\nBut nature is not always so generous. Sometimes, the question changes. We stop asking “How many successes in a crowded room?” and start asking questions about scarcity and time.\nIn these corners of reality, the Mean and Variance lose their divorce. They become locked together. The Cousins of the Normal Distribution arise when the binary choice evolves under these stricter constraints.\n\nThe Rarity: Poisson (The One-Knob World)\nImagine looking for a specific genetic mutation in a sea of DNA, or counting shooting stars in a dark sky. The opportunities for an event are nearly infinite (\\(n \\to \\infty\\)), but the chance of success is nearly zero (\\(p \\to 0\\)).\nIf you used the Normal distribution here, it would fail (it allows for negative stars). Instead, the Binomial evolves into the Poisson Distribution.\nIn this world of scarcity, you lose your freedom. You have only one knob. In the Poisson distribution, the Mean and the Variance are physically identical (\\(\\mu = \\sigma^2 = \\lambda\\)). This means you cannot separate “Risk” from “Return.” If you want to find more rare stars (increase the Mean), the chaos of your search (Variance) must increase by the exact same amount.\n\n\n\n\n\n\nMathematical Note & Code: Deriving the Poisson\n\n\n\n\n\nThe Poisson is not a separate species; it is the Binomial on a diet. We derive it by taking the limit of the Binomial PMF as \\(n \\to \\infty\\) and \\(p \\to 0\\), while keeping the average rate \\(\\lambda = np\\) constant.\nThe Derivation: Start with Binomial: \\(P(X=k) = \\frac{n!}{k!(n-k)!} p^k (1-p)^{n-k}\\). Let \\(p = \\lambda/n\\). Taking the limit as \\(n \\to \\infty\\) yields: \\[\nP(X=k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\] This formula removes \\(n\\) and \\(p\\) entirely, leaving only the rate \\(\\lambda\\).\nVisualizing Scarcity (R Code): Notice how the distribution is not symmetrical like the Bell Curve. It “huddles” against zero and has a long tail to the right.\n\n\nShow Code\nlambda &lt;- 3\nx_vals &lt;- 0:12\nprob &lt;- dpois(x_vals, lambda)\ndf_pois &lt;- data.frame(k = x_vals, prob = prob)\n\nggplot(df_pois, aes(x = k, y = prob)) +\n  geom_col(fill = \"darkgreen\", alpha = 0.7, width = 0.6) +\n  labs(title = paste(\"Poisson Distribution (lambda =\", lambda, \")\"),\n       subtitle = \"The Shape of Scarcity: Asymmetric and 'Huddled' at Zero\",\n       x = \"Number of Rare Events (k)\", y = \"Probability\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Wait: Exponential & Gamma (The Volatile World)\nSometimes, the primitive creature is not counting events at all. It is waiting for them. The question shifts from “How many?” (Discrete) to “How long?” (Continuous).\nThis simple flip gives birth to the Exponential Distribution. It models the silence between two events. If the arrival of raindrops is Poisson, the time between raindrops is Exponential.\nHere, the relationship between Risk and Reward becomes even more punishable. The Mean is the average wait (\\(1/\\lambda\\)), but the Variance is the square of that wait (\\(1/\\lambda^2\\)). The Intuition: The longer you have to wait on average, the exponentially less predictable your life becomes. A short wait is consistent; a long wait is chaotic.\nIf we wait for multiple events—say, the time it takes for 5 raindrops to fill a cup—we simply sum up these Exponential waits. The result is the Gamma Distribution.\n\n\n\n\n\n\nMathematical Note & Code: Deriving the Exponential\n\n\n\n\n\nThe Exponential distribution is the “shadow” of the Poisson.The Derivation:Let \\(T\\) be the time until the first event occurs. Waiting longer than time \\(t\\) is the same as having zero Poisson events in that time.\\[P(T &gt; t) = P(X=0) = \\frac{(\\lambda t)^0 e^{-\\lambda t}}{0!} = e^{-\\lambda t}\\]Taking the derivative of the CDF (\\(1 - e^{-\\lambda t}\\)) gives the PDF:\\[f(t) = \\lambda e^{-\\lambda t}\\]Visualizing the Silence (R Code):Notice the “Decay” shape. The probability is highest at time zero (events can happen immediately) and drops off. This is the “Memoryless” property visualised.Code snippet#| label: plot-exponential\n\n\nShow Code\nlambda &lt;- 1\nx_vals &lt;- seq(0, 5, length.out = 100)\ny_vals &lt;- dexp(x_vals, rate = lambda)\ndf_exp &lt;- data.frame(t = x_vals, density = y_vals)\n\nggplot(df_exp, aes(x = t, y = density)) +\n  geom_line(color = \"darkred\", linewidth = 1.2) +\n  geom_area(fill = \"red\", alpha = 0.2) +\n  labs(title = paste(\"Exponential Distribution (lambda =\", lambda, \")\"),\n       subtitle = \"The Shape of Waiting: Highest probability is 'Now'\",\n       x = \"Time to Next Event (t)\", y = \"Density\") +\n  theme_minimal()",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "01.binary_choice_to_normal.html#summary",
+    "href": "01.binary_choice_to_normal.html#summary",
+    "title": "1. The Binary Choice to Normal Distribution",
+    "section": "Summary",
+    "text": "Summary\nWe started with a single switch: Live or Die. We saw that by simply repeating this switch, summing it, waiting for it, or searching for it, we can generate the entire family of “Classical Statistics.”\n\nBinomial: The sum of \\(n\\) coin flips. (The Pile)\nNormal: The sum of infinitely many flips. (The Blur — Separation of Mean & Variance)\nPoisson: The count of rare successes. (The Scarcity — Mean equals Variance)\nExponential: The wait for the first success. (The Silence — Mean implies Variance squared)\n\nNow that we know the “Shapes” of the world, we must move to the next problem. In the real world, we don’t know the shape in advance. We only have the messy data. How do we figure out which shape we are looking at?\nNext, we become the Detective.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1. The Binary Choice to Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "02.from_probability_to_likelihood.html",
+    "href": "02.from_probability_to_likelihood.html",
+    "title": "From Probability to Likelihood",
+    "section": "",
+    "text": "From Probability to Likelihood\nIn the previous chapter, we discussed the “shapes” of data—the Bernoulli, the Binomial, and the Normal. But simply knowing the shape is not enough. As social scientists, we rarely start with the true parameters (like a known population mean). Instead, we start with a dataset and try to work backward to figure out the parameters that produced it.\nThis chapter covers the most important theoretical jump in statistics: the transition from Probability (deduction) to Likelihood (inference).\nTo understand this transition, we first need to be precise about our tools. We often use terms like “variable” or “independence” loosely in conversation, but in statistics, they have strict mathematical definitions. If we don’t understand these definitions, the logic of the Likelihood function will not make sense.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>From Probability to Likelihood</span>"
+    ]
+  },
+  {
+    "objectID": "02.from_probability_to_likelihood.html#the-prerequisites-for-inference",
+    "href": "02.from_probability_to_likelihood.html#the-prerequisites-for-inference",
+    "title": "From Probability to Likelihood",
+    "section": "2.1 The Prerequisites for Inference",
+    "text": "2.1 The Prerequisites for Inference\nBefore we can estimate anything, we need to define the mathematical objects we are working with. There are three core concepts that transform vague observations into computable data.\n\n1. The Random Variable (\\(X\\))\nSocial scientists often think of a “variable” simply as a column in a spreadsheet (e.g., Age, Gender, Income). In probability theory, it is slightly more specific.\nThe Equation: \\[X: \\Omega \\rightarrow \\mathbb{R}\\]\nThe Practical Meaning: A Random Variable is actually a function. It is a rule that maps a real-world outcome (\\(\\Omega\\)) to a real number (\\(\\mathbb{R}\\)). * Example: If you ask a survey respondent “Do you support Policy A?”, the real-world outcome is the verbal answer “Yes.” The Random Variable \\(X\\) is the rule that converts “Yes” into the number \\(1\\) and “No” into \\(0\\).\nWhy we need it: We cannot do math on concepts like “survival” or “support.” We can only do math on numbers. Defining \\(X\\) formally allows us to apply functions (like the mean or variance) to social phenomena.\n\n\n2. The Probability Density Function (\\(f(x)\\))\nOnce we have numbers, we need to describe how they are distributed. This is the job of the Density Function.\nThe Equation: For discrete data (PMF): \\[P(X = k) = f(k)\\] For continuous data (PDF): \\[P(a \\le X \\le b) = \\int_{a}^{b} f(x) dx\\]\nThe Practical Meaning: The PDF, denoted as \\(f(x)\\), tells us the relative likelihood of observing a specific value. * In a Normal distribution, \\(f(x)\\) is highest at the mean, meaning values near the average are most likely. * In a Poisson distribution, \\(f(x)\\) tells us the probability of observing exactly \\(k\\) counts.\nWhy we need it: This function is the “law” that governs the data. If we know \\(f(x)\\), we can predict everything about the population. In statistics, our entire goal is usually to find the specific \\(f(x)\\) (and its parameters) that best fits our data.\n\n\n3. Independence (i.i.d.)\nThis is the most critical assumption in almost all standard statistical models.\nThe Equation: \\[P(A \\cap B) = P(A) \\times P(B)\\] Or for a dataset: \\[f(x_1, x_2, ..., x_n) = f(x_1) \\cdot f(x_2) \\cdot ... \\cdot f(x_n)\\]\nThe Practical Meaning: Independence means that knowing the outcome of one observation gives you zero information about the outcome of another. * Example: If I survey Person A, their answer does not influence Person B. * Counter-Example: If I survey a husband and wife, their political views are likely correlated. They are not independent.\nWhy we need it: Without independence, the math breaks. If every data point influenced every other data point, we would need a complex equation modeling all those interactions. Independence allows us to simply multiply the probabilities together. This “multiplication rule” is the engine that makes Likelihood Estimation possible.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>From Probability to Likelihood</span>"
+    ]
+  },
+  {
+    "objectID": "02.from_probability_to_likelihood.html#flipping-the-perspective",
+    "href": "02.from_probability_to_likelihood.html#flipping-the-perspective",
+    "title": "From Probability to Likelihood",
+    "section": "2.2 Flipping the Perspective",
+    "text": "2.2 Flipping the Perspective\nNow that we have our tools, we can define the central problem of statistics.\nIn Probability, we treat the parameters as fixed knowns. * Given: The coin is fair (\\(p=0.5\\)). * Question: What is the probability of getting 9 Heads in 10 flips? * Direction: Parameters \\(\\rightarrow\\) Data.\nIn Statistics (Likelihood), we face the reverse situation. * Given: We observed 9 Heads in 10 flips. * Question: What is the most plausible value for \\(p\\)? * Direction: Data \\(\\rightarrow\\) Parameters.\nThe Likelihood Function \\(L(\\theta)\\) is simply the Probability Density function rewritten to reflect this new perspective.\n\\[L(\\theta | x) = f(x | \\theta)\\]\n\n\\(f(x|\\theta)\\) asks: “Given \\(\\theta\\), how probable is the data?”\n\\(L(\\theta|x)\\) asks: “Given the data, how ‘likely’ is the parameter \\(\\theta\\)?”\n\nWhile they look mathematically identical, they answer different questions. We use the Likelihood function to “grade” different parameter guesses. A parameter that assigns a high probability to our observed data gets a high score (High Likelihood). A parameter that makes our data look impossible gets a low score.",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>From Probability to Likelihood</span>"
+    ]
+  },
+  {
+    "objectID": "02.from_probability_to_likelihood.html#maximum-likelihood-estimation-mle",
+    "href": "02.from_probability_to_likelihood.html#maximum-likelihood-estimation-mle",
+    "title": "From Probability to Likelihood",
+    "section": "2.3 Maximum Likelihood Estimation (MLE)",
+    "text": "2.3 Maximum Likelihood Estimation (MLE)\nWe don’t just want to grade parameters; we want to find the best one.\nThe standard method for doing this is Maximum Likelihood Estimation (MLE). The logic is simple: The best estimate for the unknown parameter is the one that makes our observed data most probable.\nThe Process: 1. Assume Independence: We assume our \\(n\\) data points are independent. 2. Multiply: The total likelihood is the product of the individual probabilities: \\[L(\\theta) = \\prod_{i=1}^{n} f(x_i | \\theta)\\] 3. Maximize: We use calculus (derivatives) or computers to find the specific value of \\(\\theta\\) that maximizes this product.\nPractical Example: If you flip a coin 10 times and get 9 Heads, you intuitively guess \\(p=0.9\\). MLE gives you the mathematical justification. If you plug \\(p=0.9\\) into the Binomial formula, the probability of seeing “9 successes” is maximized. Any other value (like \\(p=0.5\\) or \\(p=0.99\\)) results in a lower probability for that specific outcome.\nThe plot below demonstrates this optimization. We observe 9 heads. We sweep through all possible values of \\(p\\) (from 0 to 1). The peak of the curve is our MLE.\n\n\n\n\n\n\n\n\nFigure 3.1: The Likelihood Function: We observed 9 Heads in 10 flips. The curve shows the Likelihood score for every possible value of \\(p\\). Notice how the likelihood increases as we slide from \\(p=0.5\\) (Low Score) to \\(p=0.7\\) (Better Score) and finally peaks at \\(p=0.9\\) (Best Score, the MLE).",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>From Probability to Likelihood</span>"
+    ]
+  },
+  {
+    "objectID": "03-courtroom.html",
+    "href": "03-courtroom.html",
+    "title": "",
+    "section": "",
+    "text": "The Classical Foundations03-courtroom.html Code",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>03-courtroom.html</span>"
+    ]
+  },
+  {
+    "objectID": "04-bending-the-line.html",
+    "href": "04-bending-the-line.html",
+    "title": "",
+    "section": "",
+    "text": "The Classical Foundations04-bending-the-line.html Code",
+    "crumbs": [
+      "The Classical Foundations",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>04-bending-the-line.html</span>"
+    ]
+  },
+  {
+    "objectID": "05-regularization.html",
+    "href": "05-regularization.html",
+    "title": "",
+    "section": "",
+    "text": "The Modern Complexity05-regularization.html Code",
+    "crumbs": [
+      "The Modern Complexity",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>05-regularization.html</span>"
+    ]
+  },
+  {
+    "objectID": "06-bayesian.html",
+    "href": "06-bayesian.html",
+    "title": "",
+    "section": "",
+    "text": "The Modern Complexity06-bayesian.html Code",
+    "crumbs": [
+      "The Modern Complexity",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>06-bayesian.html</span>"
+    ]
+  },
+  {
+    "objectID": "07-time-space.html",
+    "href": "07-time-space.html",
+    "title": "",
+    "section": "",
+    "text": "The Modern Complexity07-time-space.html Code",
+    "crumbs": [
+      "The Modern Complexity",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>07-time-space.html</span>"
+    ]
+  },
+  {
+    "objectID": "08-trees-forests.html",
+    "href": "08-trees-forests.html",
+    "title": "",
+    "section": "",
+    "text": "The Modern Complexity08-trees-forests.html Code",
+    "crumbs": [
+      "The Modern Complexity",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>08-trees-forests.html</span>"
+    ]
+  },
+  {
+    "objectID": "prob_dist_connect.html",
+    "href": "prob_dist_connect.html",
+    "title": "From Binary Selection to the Bell Curve: Bernoulli → de Moivre → Laplace",
+    "section": "",
+    "text": "We begin with the most primitive statistical object: a binary outcome.\nIn a biological survival story, a single organism either survives long enough to reproduce or it does not.\nLet \\(X \\in \\{0,1\\}\\) denote survival, where \\(X=1\\) means “survive” and \\(X=0\\) means “die”.\nThe Bernoulli model asserts that there exists a stable survival probability \\(p\\) such that\n\\[\nP(X=1)=p, \\qquad P(X=0)=1-p.\n\\]\nThis is the first conceptual step in probability theory: uncertainty is attached to a repeatable mechanism, not to an individual life.\nThe distribution is discrete and concentrated on two points, yet it already carries numerical structure through its moments,\n\\[\n\\mathbb{E}[X]=p, \\qquad \\mathrm{Var}(X)=p(1-p).\n\\]\nThe importance of Bernoulli’s formulation is not computational elegance, but conceptual clarity.\nIf survival is governed by the same probabilistic rule across individuals, then the observed survival rate in a large population stabilizes.\nThis is the content of the Law of Large Numbers: randomness at the individual level produces regularity at the population level.\nNow move from a single organism to an entire generation.\nLet \\(X_1,\\dots,X_n\\) be independent survival indicators, each with probability \\(p\\), and define the total number of survivors\n\\[\nS_n = X_1 + \\cdots + X_n.\n\\]\nThis sum is the second foundational object in probability.\nIt aggregates individual uncertainty into a population-level quantity.\nThe exact distribution of \\(S_n\\) follows from counting how many survival patterns produce exactly \\(k\\) survivors.\nThere are \\(\\binom{n}{k}\\) such patterns, and each has probability \\(p^k(1-p)^{n-k}\\) due to independence, so\n\\[\nP(S_n = k) = \\binom{n}{k} p^k (1-p)^{n-k}, \\qquad k=0,1,\\dots,n.\n\\]\nAt this stage probability theory is still combinatorial.\nThe binomial distribution is exact but becomes opaque when \\(n\\) is large.\nIf \\(n\\) represents a large population, direct probability calculations are impractical, and the shape of uncertainty is hard to see.\nThis is where de Moivre made his crucial contribution.\nInstead of asking for exact probabilities, he asked what the binomial distribution looks like when \\(n\\) is large.\nThe mathematical feature he exploited is that factorials can be approximated smoothly.\nUsing Stirling’s approximation,\n\\[\nn! \\approx \\sqrt{2\\pi n}\\left(\\frac{n}{e}\\right)^n,\n\\]\nthe discrete binomial coefficients can be rewritten in continuous form.\nAfter algebraic simplification, the binomial probability mass near its center \\(np\\) admits the approximation\n\\[\nP(S_n = k)\n\\approx\n\\frac{1}{\\sqrt{2\\pi\\,np(1-p)}}\n\\exp\\!\\left(\n-\\frac{(k-np)^2}{2np(1-p)}\n\\right),\n\\]\nfor large \\(n\\) and \\(k\\) close to \\(np\\).\nThis is the de Moivre–Laplace normal approximation.\nIts importance is conceptual rather than technical.\nIt reveals that population-level survival counts concentrate around their mean, with dispersion controlled by variance, and that extreme deviations decay exponentially.\nA bell-shaped curve emerges not by assumption, but by approximation of exact combinatorics.\nLaplace’s contribution was to elevate this observation into a general principle.\nHe asked why the same bell-shaped structure appears even when randomness is not literally binary.\nInstead of counting outcomes, Laplace studied sums of random contributions using analytic tools.\nHis key insight was to represent distributions through transforms that behave well under addition.\nFor a random variable \\(X\\), Laplace considered the function\n\\[\nM_X(t) = \\mathbb{E}[e^{tX}],\n\\]\nwhich later became known as the moment generating function.\nIts defining property is that it converts sums into products.\nIf \\(X\\) and \\(Y\\) are independent, then\n\\[\nM_{X+Y}(t)\n=\n\\mathbb{E}[e^{t(X+Y)}]\n=\n\\mathbb{E}[e^{tX}]\\,\\mathbb{E}[e^{tY}]\n=\nM_X(t) M_Y(t).\n\\]\nThis property allows aggregation to be studied analytically.\nLaplace then combined this multiplicative structure with local series expansion.\nIf \\(X\\) has mean \\(0\\) and variance \\(\\sigma^2\\), then near \\(t=0\\),\n\\[\nM_X(t) = 1 + \\frac{\\sigma^2 t^2}{2} + o(t^2).\n\\]\nFor the standardized sum\n\\[\nZ_n = \\frac{1}{\\sigma\\sqrt{n}} \\sum_{i=1}^n X_i,\n\\]\nindependence implies\n\\[\nM_{Z_n}(t)\n=\n\\left[\nM_X\\!\\left(\\frac{t}{\\sigma\\sqrt{n}}\\right)\n\\right]^n.\n\\]\nSubstituting the local expansion yields the heuristic limit\n\\[\nM_{Z_n}(t)\n\\approx\n\\left(1+\\frac{t^2}{2n}\\right)^n\n\\to\ne^{t^2/2}.\n\\]\nThe limiting transform \\(e^{t^2/2}\\) corresponds exactly to the standard normal distribution.\nThis argument captures the essence of Laplace’s contribution: when many small random effects are aggregated, detailed structure disappears and only variance survives.\nThe Gaussian distribution emerges as the universal shape of aggregated uncertainty.\nTo visualize this historical progression, the following simulation uses the survival narrative.\nIt first compares the exact binomial distribution with de Moivre’s approximation, and then shows how standardized sums of many small survival shocks converge to a normal curve.\n\n\nShow Code\nsuppressPackageStartupMessages({\n  library(ggplot2)\n})\n\nset.seed(123)\n\nn &lt;- 400\np &lt;- 0.35\n\nk &lt;- 0:n\nbinom_pmf &lt;- dbinom(k, size = n, prob = p)\n\nmu &lt;- n * p\nsig &lt;- sqrt(n * p * (1 - p))\n\napprox_mass &lt;- pnorm((k + 0.5 - mu)/sig) - pnorm((k - 0.5 - mu)/sig)\n\ndf_binom &lt;- data.frame(\n  k = k,\n  pmf = binom_pmf,\n  approx = approx_mass\n)\n\nggplot(df_binom, aes(x = k)) +\n  geom_col(aes(y = pmf), alpha = 0.35) +\n  geom_line(aes(y = approx), linewidth = 1) +\n  coord_cartesian(xlim = c(mu - 4*sig, mu + 4*sig)) +\n  labs(\n    title = \"Exact Binomial vs de Moivre–Laplace Approximation\",\n    x = \"Number of survivors\",\n    y = \"Probability mass\"\n  ) +\n  theme_minimal(base_size = 11)\n\n\n\n\n\n\n\n\n\nShow Code\nB &lt;- 20000\nterms &lt;- c(1, 2, 5, 10, 30, 100)\n\nsimulate_Z &lt;- function(m) {\n  X &lt;- rbinom(B * m, 1, p)\n  X &lt;- (X - p) / sqrt(p * (1 - p))\n  X &lt;- matrix(X, ncol = m)\n  rowSums(X) / sqrt(m)\n}\n\nclt_df &lt;- do.call(rbind, lapply(terms, function(m) {\n  data.frame(m = m, z = simulate_Z(m))\n}))\n\nxg &lt;- seq(-4, 4, length.out = 400)\nnorm_df &lt;- data.frame(x = xg, y = dnorm(xg))\n\nggplot(clt_df, aes(x = z)) +\n  geom_histogram(aes(y = after_stat(density)), bins = 70, alpha = 0.35) +\n  geom_line(data = norm_df, aes(x = x, y = y), linewidth = 1) +\n  facet_wrap(~ m, nrow = 2, labeller = label_both) +\n  coord_cartesian(xlim = c(-4, 4)) +\n  labs(\n    title = \"Laplace intuition: aggregation of survival shocks\",\n    x = \"Standardized sum\",\n    y = \"Density\"\n  ) +\n  theme_minimal(base_size = 11)",
+    "crumbs": [
+      "The Modern Complexity",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>From Binary Selection to the Bell Curve: Bernoulli → de Moivre → Laplace</span>"
+    ]
+  }
+]
