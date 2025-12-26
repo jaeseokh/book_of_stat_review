@@ -1,0 +1,43 @@
+project:
+  type: book
+  output-dir: ../docs
+
+book:
+  title: "A Narrative of Statistics for the Social Scientist"
+  author: "Jaeseok Hwang"
+  date: "Sep 2025 – Present"
+  sidebar:
+    search: true
+    collapse-level: 1
+  chapters:
+    - part: Preface
+      chapters: 
+      - index.qmd
+    - part: "The Classical Foundations"
+      chapters:
+        - 01.binary_choice_to_normal.qmd      
+        - 02.from_probability_to_likelihood.qmd
+        - 03-courtroom.qmd
+        - 04-bending-the-line.qmd
+    - part: "The Modern Complexity"
+      chapters:
+        - 05-regularization.qmd
+        - 06-bayesian.qmd
+        - 07-time-space.qmd
+        - 08-trees-forests.qmd
+        - prob_dist_connect.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: style.css
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    code-fold: true
+    code-tools: true
+    code-summary: "Show Code"
+
+crossref: 
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"

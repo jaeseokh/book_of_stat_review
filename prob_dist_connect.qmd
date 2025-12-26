@@ -1,0 +1,207 @@
+---
+title: "From Binary Selection to the Bell Curve: Bernoulli → de Moivre → Laplace"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+We begin with the most primitive statistical object: a binary outcome.  
+In a biological survival story, a single organism either survives long enough to reproduce or it does not.  
+Let $X \in \{0,1\}$ denote survival, where $X=1$ means “survive” and $X=0$ means “die”.  
+The Bernoulli model asserts that there exists a stable survival probability $p$ such that
+
+$$
+P(X=1)=p, \qquad P(X=0)=1-p.
+$$
+
+This is the first conceptual step in probability theory: uncertainty is attached to a *repeatable mechanism*, not to an individual life.  
+The distribution is discrete and concentrated on two points, yet it already carries numerical structure through its moments,
+
+$$
+\mathbb{E}[X]=p, \qquad \mathrm{Var}(X)=p(1-p).
+$$
+
+The importance of Bernoulli’s formulation is not computational elegance, but conceptual clarity.  
+If survival is governed by the same probabilistic rule across individuals, then the observed survival rate in a large population stabilizes.  
+This is the content of the Law of Large Numbers: randomness at the individual level produces regularity at the population level.
+
+Now move from a single organism to an entire generation.  
+Let $X_1,\dots,X_n$ be independent survival indicators, each with probability $p$, and define the total number of survivors
+
+$$
+S_n = X_1 + \cdots + X_n.
+$$
+
+This sum is the second foundational object in probability.  
+It aggregates individual uncertainty into a population-level quantity.  
+The exact distribution of $S_n$ follows from counting how many survival patterns produce exactly $k$ survivors.  
+There are $\binom{n}{k}$ such patterns, and each has probability $p^k(1-p)^{n-k}$ due to independence, so
+
+$$
+P(S_n = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k=0,1,\dots,n.
+$$
+
+At this stage probability theory is still combinatorial.  
+The binomial distribution is exact but becomes opaque when $n$ is large.  
+If $n$ represents a large population, direct probability calculations are impractical, and the *shape* of uncertainty is hard to see.
+
+This is where de Moivre made his crucial contribution.  
+Instead of asking for exact probabilities, he asked what the binomial distribution *looks like* when $n$ is large.  
+The mathematical feature he exploited is that factorials can be approximated smoothly.  
+Using Stirling’s approximation,
+
+$$
+n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n,
+$$
+
+the discrete binomial coefficients can be rewritten in continuous form.  
+After algebraic simplification, the binomial probability mass near its center $np$ admits the approximation
+
+$$
+P(S_n = k)
+\approx
+\frac{1}{\sqrt{2\pi\,np(1-p)}}
+\exp\!\left(
+-\frac{(k-np)^2}{2np(1-p)}
+\right),
+$$
+
+for large $n$ and $k$ close to $np$.  
+
+This is the de Moivre–Laplace normal approximation.  
+Its importance is conceptual rather than technical.  
+It reveals that population-level survival counts concentrate around their mean, with dispersion controlled by variance, and that extreme deviations decay exponentially.  
+A bell-shaped curve emerges not by assumption, but by approximation of exact combinatorics.
+
+Laplace’s contribution was to elevate this observation into a general principle.  
+He asked why the same bell-shaped structure appears even when randomness is not literally binary.  
+Instead of counting outcomes, Laplace studied *sums of random contributions* using analytic tools.  
+His key insight was to represent distributions through transforms that behave well under addition.
+
+For a random variable $X$, Laplace considered the function
+
+$$
+M_X(t) = \mathbb{E}[e^{tX}],
+$$
+
+which later became known as the moment generating function.  
+Its defining property is that it converts sums into products.  
+If $X$ and $Y$ are independent, then
+
+$$
+M_{X+Y}(t)
+=
+\mathbb{E}[e^{t(X+Y)}]
+=
+\mathbb{E}[e^{tX}]\,\mathbb{E}[e^{tY}]
+=
+M_X(t) M_Y(t).
+$$
+
+This property allows aggregation to be studied analytically.  
+Laplace then combined this multiplicative structure with local series expansion.  
+If $X$ has mean $0$ and variance $\sigma^2$, then near $t=0$,
+
+$$
+M_X(t) = 1 + \frac{\sigma^2 t^2}{2} + o(t^2).
+$$
+
+For the standardized sum
+
+$$
+Z_n = \frac{1}{\sigma\sqrt{n}} \sum_{i=1}^n X_i,
+$$
+
+independence implies
+
+$$
+M_{Z_n}(t)
+=
+\left[
+M_X\!\left(\frac{t}{\sigma\sqrt{n}}\right)
+\right]^n.
+$$
+
+Substituting the local expansion yields the heuristic limit
+
+$$
+M_{Z_n}(t)
+\approx
+\left(1+\frac{t^2}{2n}\right)^n
+\to
+e^{t^2/2}.
+$$
+
+The limiting transform $e^{t^2/2}$ corresponds exactly to the standard normal distribution.  
+This argument captures the essence of Laplace’s contribution: when many small random effects are aggregated, detailed structure disappears and only variance survives.  
+The Gaussian distribution emerges as the universal shape of aggregated uncertainty.
+
+To visualize this historical progression, the following simulation uses the survival narrative.  
+It first compares the exact binomial distribution with de Moivre’s approximation, and then shows how standardized sums of many small survival shocks converge to a normal curve.
+
+```{r}
+suppressPackageStartupMessages({
+  library(ggplot2)
+})
+
+set.seed(123)
+
+n <- 400
+p <- 0.35
+
+k <- 0:n
+binom_pmf <- dbinom(k, size = n, prob = p)
+
+mu <- n * p
+sig <- sqrt(n * p * (1 - p))
+
+approx_mass <- pnorm((k + 0.5 - mu)/sig) - pnorm((k - 0.5 - mu)/sig)
+
+df_binom <- data.frame(
+  k = k,
+  pmf = binom_pmf,
+  approx = approx_mass
+)
+
+ggplot(df_binom, aes(x = k)) +
+  geom_col(aes(y = pmf), alpha = 0.35) +
+  geom_line(aes(y = approx), linewidth = 1) +
+  coord_cartesian(xlim = c(mu - 4*sig, mu + 4*sig)) +
+  labs(
+    title = "Exact Binomial vs de Moivre–Laplace Approximation",
+    x = "Number of survivors",
+    y = "Probability mass"
+  ) +
+  theme_minimal(base_size = 11)
+
+B <- 20000
+terms <- c(1, 2, 5, 10, 30, 100)
+
+simulate_Z <- function(m) {
+  X <- rbinom(B * m, 1, p)
+  X <- (X - p) / sqrt(p * (1 - p))
+  X <- matrix(X, ncol = m)
+  rowSums(X) / sqrt(m)
+}
+
+clt_df <- do.call(rbind, lapply(terms, function(m) {
+  data.frame(m = m, z = simulate_Z(m))
+}))
+
+xg <- seq(-4, 4, length.out = 400)
+norm_df <- data.frame(x = xg, y = dnorm(xg))
+
+ggplot(clt_df, aes(x = z)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 70, alpha = 0.35) +
+  geom_line(data = norm_df, aes(x = x, y = y), linewidth = 1) +
+  facet_wrap(~ m, nrow = 2, labeller = label_both) +
+  coord_cartesian(xlim = c(-4, 4)) +
+  labs(
+    title = "Laplace intuition: aggregation of survival shocks",
+    x = "Standardized sum",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 11)
+```

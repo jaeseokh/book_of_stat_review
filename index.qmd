@@ -1,0 +1,147 @@
+---
+title: "Overview" 
+author: "Jaeseok Hwang"
+date: "2025-12-17"
+format:
+  html:
+    toc: false # No table of contents needed for the cover page
+---
+
+# Preface: The Guidance System {-}
+
+To be honest, I spent about ten years learning statistics the wrong way. As a social scientist with a background in Economics, I was trained to be a "consumer" of methods. I knew how to run the software and interpret the output, but I had a hard time grasping the intuition behind the machine. I often felt that my understanding had cracks in it—gaps where the logic should have been solid. For years, I struggled with the fundamental questions that define the "Producer" of research: Why are sample statistics so different from population parameters? Why do we carefully select an assumed distribution instead of just using the raw data? What is the actual difference between parametric and non-parametric approaches? 
+
+Like many social scientists, I had been consuming only the "surface" of statistics—the simple examples and the black-box tools—without ever seeing what lay beneath. I knew this feeling well because I had faced it before in my own field. During my undergraduate and Master's studies in Economics, I was overwhelmed by the complex definitions, theorems, and math required to be an advanced user. But during the first two years of my Ph.D., I managed to break through that complex system. I forced myself to stop memorizing and start creating storylines that connected those isolated theorems into coherent narratives.
+
+It felt like I had transferred my brain through a hidden gateway—like the platform in Harry Potter—and gradually, the chaos has turned into a system. Now, I want to use that same discipline to bridge the "holes and cracks" in my understanding of statistics. This book is a documentation of that journey. It is written for social scientists, or anyone unfamiliar with complex math, who want to look into the "beautiful mind of nerds" without getting lost in the equations. My goal is to use storylines and narratives to strip away the intimidating surface and look into the logic underneath.
+
+We are going to treat statistics not as a set of rules, but as a series of solutions to specific problems.
+
+## The Roadmap {-}
+
+
+# Part I: The Classical Foundations {-}
+
+## 1. The Binary Choice: From Dust to Distributions {-}
+**The Narrative:** We begin with the most primitive unit of information: the binary choice (Life vs. Death). We trace how repeating this jagged choice millions of times smooths it out into the "Classical Family" of distributions.
+
+* **Models:**
+    * **Bernoulli & Binomial:** The origin (discrete trials).
+    * **Normal (Gaussian):** The destination (continuous limit).
+    * **Poisson:** The limit of rare events.
+    * **Exponential & Gamma:** The modeling of waiting times.
+* **Theory:**
+    * **Central Limit Theorem (CLT):** Why sums tend toward Normality.
+    * **Maximum Entropy:** Why the Normal is the "most honest" assumption for a fixed variance.
+    * **Law of Rare Events:** The bridge from Binomial to Poisson.
+* **Functions (The Math):**
+    * **PDFs/PMFs:** The density formulas.
+    * **Moment Generating Functions (MGF):** $M(t) = E[e^{tX}]$ (The genetic code of distributions).
+    * **Taylor Series Expansion:** Used to prove how higher moments vanish in the limit.
+
+## 2. The Detective: Likelihood & Estimation {-}
+**The Narrative:** We stop playing God (knowing parameters) and start playing Detective (guessing them from data). We discover that "Least Squares" is just a special case of Likelihood.
+
+* **Models:**
+    * **Standard Normal Model:** Estimating $\mu$ and $\sigma$.
+    * **Linear Regression (OLS):** Re-introduced as a Maximum Likelihood estimator.
+* **Theory:**
+    * **The Likelihood Principle:** All evidence is contained in the likelihood function.
+    * **Maximum Likelihood Estimation (MLE):** Finding parameters that maximize the probability of the observed data.
+* **Functions (The Math):**
+    * **Likelihood Function:** $L(\theta | X) = \prod f(x_i; \theta)$.
+    * **Log-Likelihood:** $\ell(\theta) = \sum \ln f(x_i; \theta)$ (The optimization surface).
+    * **Score Function:** The derivative of the Log-Likelihood.
+
+## 3. The Courtroom: Hypothesis Testing {-}
+**The Narrative:** The Detective finds a suspect, but the Courtroom must check the evidence. We introduce the Skeptic (Null Hypothesis) and measure "Surprise" rather than "Truth."
+
+* **Models:**
+    * **Null Model ($H_0$):** The restricted model (e.g., $\beta = 0$).
+    * **Alternative Model ($H_1$):** The full model.
+* **Theory:**
+    * **Null Hypothesis Significance Testing (NHST).**
+    * **Type I & II Errors:** False Positives vs. False Negatives.
+    * **Asymptotic Normality:** Why test statistics often follow a $\chi^2$ distribution.
+* **Functions (The Math):**
+    * **Wald Statistic:** Horizontal distance from the null.
+    * **Likelihood Ratio Statistic:** Vertical distance (height difference) between models.
+    * **Score Statistic:** The slope of the likelihood at the null.
+
+## 4. Bending the Line: Generalized Linear Models (GLM) {-}
+**The Narrative:** Standard regression fails when the outcome is binary or a count (lines go to infinity). We use a "Link Function" to translate linear math into bounded probabilities.
+
+* **Models:**
+    * **Logistic Regression:** For binary outcomes.
+    * **Poisson Regression:** For count data.
+    * **GLM Framework:** The unifying theory.
+* **Theory:**
+    * **The Link Function:** Separating the systematic component from the random component.
+    * **Odds & Log-Odds:** Interpreting probability on a linear scale.
+* **Functions (The Math):**
+    * **Sigmoid (Logit) Function:** $p = 1 / (1 + e^{-z})$.
+    * **Log Link:** $\ln(\lambda) = \beta X$.
+    * **Deviance:** The GLM version of "Residual Sum of Squares."
+
+---
+
+# Part II: The Modern Complexity {-}
+
+## 5. The Penalty: Regularization {-}
+**The Narrative:** The Detective gets overconfident and starts seeing conspiracies (Overfitting). We introduce a "Judge" who fines the model for using too many variables.
+
+* **Models:**
+    * **Ridge Regression ($L_2$):** Shrinks parameters.
+    * **Lasso Regression ($L_1$):** Selects variables (forces some to zero).
+    * **Elastic Net:** The hybrid approach.
+* **Theory:**
+    * **Bias-Variance Trade-off:** The fundamental conflict of learning.
+    * **Overfitting:** Memorizing noise vs. learning signal.
+* **Functions (The Math):**
+    * **Lagrange Multipliers:** Solving constrained optimization.
+    * **The Penalty Term:** Adding $+\lambda \sum \beta^2$ to the Loss Function.
+    * **Norms:** Euclidean ($L_2$) vs. Manhattan ($L_1$) distance.
+
+## 6. The Subjective Return: Bayesian Inference {-}
+**The Narrative:** We realize the "Penalty" was actually a "Prior Belief." We shift from seeking one True Parameter to mapping the entire distribution of uncertainty.
+
+* **Models:**
+    * **Bayesian Linear Regression.**
+    * **Hierarchical/Multilevel Models:** Handling grouped data.
+* **Theory:**
+    * **Bayes' Theorem:** Updating beliefs with data.
+    * **Priors:** Informative vs. Flat priors.
+    * **Conjugacy:** Mathematical compatibility between Prior and Likelihood.
+* **Functions (The Math):**
+    * **Posterior Formulation:** $P(\theta|X) \propto P(X|\theta) \cdot P(\theta)$.
+    * **MCMC (Markov Chain Monte Carlo):** The simulation engine for complex posteriors.
+
+## 7. The Invisible Thread: Time Series & Spatial Analysis {-}
+**The Narrative:** We stop assuming data points are independent islands. We acknowledge that today is haunted by yesterday (Time) and location shapes destiny (Space).
+
+* **Models:**
+    * **ARIMA:** Modeling memory in time.
+    * **SAR / SEM:** Spatial Autoregressive & Spatial Error models.
+    * **Gaussian Processes:** The ultimate model of proximity.
+* **Theory:**
+    * **Stationarity:** The assumption that rules don't change over time.
+    * **Autocorrelation:** Correlation of a variable with itself.
+    * **Spatial Weights ($W$):** Defining the neighborhood.
+* **Functions (The Math):**
+    * **Covariance Matrix ($\Sigma$):** Moving from Diagonal (independent) to Dense (correlated).
+    * **ACF / PACF:** Measuring the "echo" of the past.
+
+## 8. The Broken Mirror: Trees & Forests {-}
+**The Narrative:** When the world is too fractured for smooth curves, we break it into shards. We use Decision Trees to split logic and Ensembles (Forests) to stabilize the result.
+
+* **Models:**
+    * **CART (Decision Trees):** The single shard.
+    * **Random Forest:** The Wisdom of Crowds (Bagging).
+    * **Gradient Boosting (XGBoost):** The Learning Student (Boosting).
+* **Theory:**
+    * **Recursive Partitioning:** Splitting data into homogenous groups.
+    * **Ensemble Learning:** Reducing Variance (Bagging) vs. Reducing Bias (Boosting).
+    * **Gradient Descent in Function Space:** Optimizing predictions step-by-step.
+* **Functions (The Math):**
+    * **Gini Impurity / Entropy:** Metrics for "purity" in a split.
+    * **Information Gain:** The reduction in entropy.
